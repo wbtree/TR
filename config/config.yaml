@@ -120,7 +120,7 @@ rss:
 #    • 适用场景：避免重复信息干扰
 # ===============================================================
 report:
-  mode: "current"                     # 可选: daily | current | incremental
+  mode: "incremental"                     # 可选: daily | current | incremental
   display_mode: "keyword"             # 分组维度: keyword | platform
                                       # keyword: 按关键词分组显示（默认）
                                       # platform: 按平台/来源分组显示
@@ -222,10 +222,10 @@ notification:
   #   • 正常窗口：start < end，如 09:00-21:00（当天 9 点到 21 点）
   #   • 跨日窗口：start > end，如 22:00-02:00（当天 22 点到次日 2 点）
   push_window:
-    enabled: false                    # 是否启用推送时间窗口控制
-    start: "20:00"                    # 开始时间（使用 app.timezone 配置的时区）
-    end: "22:00"                      # 结束时间（支持跨日，如 end: "02:00"）
-    once_per_day: true                # true=窗口内只推送一次，false=窗口内每次执行都推送
+    enabled: true                    # 是否启用推送时间窗口控制
+    start: "8:00"                    # 开始时间（使用 app.timezone 配置的时区）
+    end: "23:00"                      # 结束时间（支持跨日，如 end: "02:00"）
+    once_per_day: false                # true=窗口内只推送一次，false=窗口内每次执行都推送
 
   # 推送渠道配置
   channels:
